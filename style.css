@@ -1,57 +1,59 @@
-
 @font-face {
     font-family: regural;
     src: url("/fonts/Inter-Regular.ttf");
 }
 
-@font-face{
+@font-face {
     font-family: bolded;
     src: url("/fonts/Inter-Bold.ttf");
 }
 
-:root{
---Lime-Green: hsl(163, 72%, 41%);
---Bright-Red: hsl(356, 69%, 56%);
+:root {
 
---Facebook: hsl(208, 92%, 53%);
---Twitter: hsl(203, 89%, 53%);
---Instagram: linear-gradient(60deg, hsl(37, 97%, 70%) 20%, hsl(329, 70%, 58%));
---YouTube: hsl(348, 97%, 39%);
+    --Lime-Green: hsl(163, 72%, 41%);
+    --Bright-Red: hsl(356, 69%, 56%);
+    --Facebook: hsl(208, 92%, 53%);
+    --Twitter: hsl(203, 89%, 53%);
+    --Instagram: linear-gradient(60deg, hsl(37, 97%, 70%) 20%, hsl(329, 70%, 58%));
+    --YouTube: hsl(348, 97%, 39%);
+
+}
+
+:root.light {
+
+    --Toggle-hover: linear-gradient(48deg, hsl(210, 78%, 56%), hsl(146, 68%, 55%));
+    --card-hover: hsl(234, 34%, 88%);
+    --background-clr: hsl(0, 0%, 100%);
+    --top-bg-pattern: hsl(225, 100%, 98%);
+    --card-bg: hsl(227, 47%, 96%);
+    --text: hsl(228, 12%, 44%);
+    --main-text: hsl(230, 17%, 14%);
+    --Toggle: hsl(230, 22%, 50%);
+
 
 }
 
-:root{
+:root.dark {
 
---background-clr: hsl(0, 0%, 100%);
---top-bg-pattern: hsl(225, 100%, 98%);
---card-bg: hsl(227, 47%, 96%);
---text: hsl(228, 12%, 44%);
---main-text: hsl(230, 17%, 14%);
---Toggle: hsl(230, 22%, 74%)
-
+    --card-hover: hsl(230, 20%, 23%);
+    --Toggle-hover: linear-gradient(48deg, hsl(210, 78%, 56%), hsl(146, 68%, 55%));
+    --background-clr: hsl(230, 17%, 14%);
+    --top-bg-pattern: hsl(232, 19%, 15%);
+    --card-bg: hsl(228, 28%, 20%);
+    --text: hsl(228, 34%, 66%);
+    --main-text: hsl(0, 0%, 100%);
 
 }
-/*
-:root.dark{
---Toggle: linear gradient hsl(210, 78%, 56%) to hsl(146, 68%, 55%)
 
---background-clr: hsl(230, 17%, 14%);
---top-bg-pattern: hsl(232, 19%, 15%);
---card-bg: hsl(228, 28%, 20%);
---text: hsl(228, 34%, 66%);
---main-text: hsl(0, 0%, 100%);
-
-}*/
-
-body{
+body {
     height: 100vw;
     font-size: 14px;
-    background: linear-gradient(var(--top-bg-pattern) 25%, var(--background-clr) 25% );
+    background: linear-gradient(var(--top-bg-pattern) 25%, var(--background-clr) 25%);
     background-repeat: no-repeat;
     font-family: "regural", system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
-.container{
+.container {
     display: grid;
     grid-template-rows: 1fr 2fr;
     grid-template-columns: 1fr;
@@ -60,30 +62,30 @@ body{
     margin: 1rem auto;
 }
 
-.social-dashboard{
+.social-dashboard {
     height: 7rem;
     display: grid;
     align-items: center;
     grid-template-columns: repeat(2, 1fr);
 }
 
-.change-theme{
+.change-theme {
     justify-items: end;
     align-items: center;
     display: grid;
     grid-template-columns: 6fr 1fr;
 }
 
-.btn-toogle{
+.btn-toogle {
     width: 3rem;
     height: 1.5rem;
     border-radius: 3rem;
     background-color: var(--Toggle);
+    background-image: var(--Toggle);
     border: 1.2px solid var(--Toggle);
 }
 
-.inside-btn-dark{
-    display: none;
+.inside-btn-dark {
     height: 1.3rem;
     width: 1.3rem;
     margin: 2px;
@@ -91,37 +93,38 @@ body{
     background-color: var(--background-clr);
 }
 
-.inside-btn{
-   height: 1.3rem;
-   width: 1.3rem;
-   margin: 2px;
-   border-radius: 1rem;
-   margin-left: 1.48rem;
-   background-color: var(--background-clr);
+.inside-btn {
+    height: 1.3rem;
+    width: 1.3rem;
+    margin: 2px;
+    border-radius: 1rem;
+    margin-left: 1.48rem;
+    background-color: var(--background-clr);
 }
 
-.theme-paragraph{
+.theme-paragraph {
     color: var(--text);
     font-family: "bolded";
-    
+
 }
 
-.dash-title, .dash-paragraph{
-   margin: 4px;
+.dash-title,
+.dash-paragraph {
+    margin: 4px;
 }
 
-.dash-title{
+.dash-title {
     font-family: "bolded";
     color: var(--main-text);
 }
 
-.dash-paragraph{
+.dash-paragraph {
     color: var(--text);
     font-family: "bolded";
     font-size: .87em;
 }
 
-.social-cards{
+.social-cards {
     gap: 1rem;
     height: 12rem;
     margin-top: 2rem;
@@ -129,15 +132,15 @@ body{
     grid-template-columns: repeat(4, 1fr);
 }
 
-.facebook{
+.facebook {
     border-top: 4px solid var(--Facebook);
 }
 
-.twitter{
+.twitter {
     border-top: 4px solid var(--Twitter);
 }
 
-.instagram{
+.instagram {
     position: relative;
     border: 4px solid transparent;
     border-radius: 16px;
@@ -146,30 +149,32 @@ body{
 
 .instagram::after {
     position: absolute;
-    top: -4px; bottom: 4px;
-    left: 4px; right: 4px;
+    top: -4px;
+    bottom: 4px;
+    left: 4px;
+    right: 4px;
     background: var(--Instagram);
     content: '';
     z-index: -1;
     border-radius: 5px;
 }
 
-.youtube{
+.youtube {
     border-top: 4px solid var(--YouTube);
 }
 
-.card{
-    background-color: var(--top-bg-pattern);
+.card {
+    background-color: var(--card-bg);
     height: 11rem;
     border-radius: 5px;
 }
 
-.card-content{
+.card-content {
     margin: auto;
     text-align: center;
 }
 
-.social-platform{
+.social-platform {
     justify-items: center;
     align-items: center;
     gap: 5px;
@@ -179,19 +184,19 @@ body{
     grid-template-columns: 1fr 5fr;
 }
 
-.card-header{
+.card-header {
     font-family: "bolded";
     color: var(--main-text);
     font-size: 3rem;
     margin: 0px;
 }
 
-.followers{
+.followers {
     margin: 1px auto 3px auto;
     letter-spacing: 3px;
 }
 
-.ratio{ 
+.ratio {
     width: 6rem;
     display: grid;
     align-items: center;
@@ -199,57 +204,114 @@ body{
     grid-template-columns: .1rem 6fr;
 }
 
-.social-name{
+.social-name {
     color: var(--text);
     font-family: "bolded";
     font-size: .9em;
 }
 
-.ratio-paragraph{
+.ratio-paragraph {
     color: var(--Lime-Green);
 }
 
-.red-ratio{
-    color:var(--Bright-Red);
+.red-ratio {
+    color: var(--Bright-Red);
 }
 
-.overview{
-    border: 2px solid red;
-}
-
-.overview-header{
+.overview-header {
     color: var(--text);
     font-family: bold;
 }
 
-.overview-cards{
+.overview-cards {
     display: grid;
     grid-template-columns: repeat(4, minmax(12rem, 1fr));
     grid-template-rows: repeat(2, 1fr);
     gap: 1rem;
 }
 
-.overview-card{
+.overview-card {
     height: 7rem;
 }
 
-.overview-card-content{
+.overview-card-content {
     width: 11rem;
     display: grid;
     align-items: center;
     justify-content: center;
     grid-template-columns: 2fr 1fr;
     grid-template-rows: repeat(2, 3rem);
-    margin: 0 auto 0 auto;
+    margin: auto;
 }
 
-.overview-ratio{
+.overview-ratio {
     display: grid;
     grid-template-columns: 1fr 2fr;
     align-items: center;
 }
 
-.overview-card-content > img, .overview-card-content > .overview-ratio{
+.overview-card-content>img,
+.overview-card-content>.overview-ratio {
     justify-self: end;
     justify-content: end;
+}
+
+.overview-card-content>.overview-ratio,
+.overview-card-content>.overview-number {
+    margin-top: 2rem;
+}
+
+.overview-paragraph {
+    color: var(--text);
+    font-family: "bolded";
+}
+
+.overview-number {
+    color: var(--main-text);
+    font-family: "bolded";
+}
+
+.card:hover {
+    background-color: var(--card-hover);
+}
+
+.btn-toogle:hover {
+    cursor: pointer;
+    background-color: transparent;
+    background-image: var(--Toggle-hover);
+}
+
+@media(prefers-color-scheme: light) {
+    :root{
+        --Toggle-hover: linear-gradient(48deg, hsl(210, 78%, 56%), hsl(146, 68%, 55%));
+        --card-hover: hsl(234, 34%, 88%);
+        --background-clr: hsl(0, 0%, 100%);
+        --top-bg-pattern: hsl(225, 100%, 98%);
+        --card-bg: hsl(227, 47%, 96%);
+        --text: hsl(228, 12%, 44%);
+        --main-text: hsl(230, 17%, 14%);
+        --Toggle: hsl(230, 22%, 74%);
+    }
+}
+
+@media(prefers-color-scheme: dark) {
+    .inside-btn {
+        display: none;
+    }
+    
+    .btn-toogle{
+        border-image: var(--Toggle);
+        border: 1px solid transparent;
+    }
+
+    :root{
+        --Toggle: linear-gradient(48deg, hsl(210, 78%, 56%), hsl(146, 68%, 55%));
+        --card-hover: hsl(230, 20%, 23%);
+        --background-clr: hsl(230, 17%, 14%);
+        --top-bg-pattern: hsl(232, 19%, 15%);
+        --card-bg: hsl(228, 28%, 20%);
+        --text: hsl(228, 34%, 66%);
+        --main-text: hsl(0, 0%, 100%);
+
+    }
 }
