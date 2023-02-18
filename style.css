@@ -225,7 +225,7 @@ body {
 
 .overview-cards {
     display: grid;
-    grid-template-columns: repeat(4, minmax(12rem, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
     grid-template-rows: repeat(2, 1fr);
     gap: 1rem;
 }
@@ -275,13 +275,15 @@ body {
     background-color: var(--card-hover);
 }
 
-.btn-toogle:hover {
-    cursor: pointer;
+.btn-toogle:hover{
     background-color: transparent;
     background-image: var(--Toggle-hover);
 }
 
 @media(prefers-color-scheme: light) {
+    .inside-btn-dark{
+        display: none;
+    }
     :root{
         --Toggle-hover: linear-gradient(48deg, hsl(210, 78%, 56%), hsl(146, 68%, 55%));
         --card-hover: hsl(234, 34%, 88%);
@@ -305,6 +307,7 @@ body {
     }
 
     :root{
+        --Toggle-hover: linear-gradient(48deg, hsl(210, 78%, 56%), hsl(146, 68%, 55%));
         --Toggle: linear-gradient(48deg, hsl(210, 78%, 56%), hsl(146, 68%, 55%));
         --card-hover: hsl(230, 20%, 23%);
         --background-clr: hsl(230, 17%, 14%);
@@ -314,4 +317,28 @@ body {
         --main-text: hsl(0, 0%, 100%);
 
     }
+}
+
+@media screen and (max-width: 670px){
+   body{
+    height: 130rem;
+   }
+   .social-header{
+    border-bottom: .5px solid var(--text);
+   }
+  .container{
+    width: 90vw;
+  }
+  .overview-cards{
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr))
+  }
+  .overview-header{
+    margin-top: 40rem;
+  }
+  .social-dashboard, .social-cards{
+    grid-template-columns: 1fr;
+  }
+  .change-theme{
+    grid-template-columns: 1fr 4fr;
+  }
 }
